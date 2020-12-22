@@ -46,7 +46,7 @@ class App extends React.Component {
           <ToDoPart items={this.state.toDoItems} finishMethod={this.finishTask.bind(this)} addMethod={this.addTask.bind(this)} />
         </div>
         <div className="TablePart">
-          <DonePart />
+          <DonePart items={this.state.toDoItems} />
         </div>
       </div>
     );
