@@ -1,6 +1,14 @@
 .isDone{
+    background-color: #fece00;
     color: grey;
+    margin: 15px 20px;
+    padding: 10px;
+    box-shadow: 0 0 3px 1px black;
 }
 .isntDone{
+    background-color: #fece00;
     color: black;
+    margin: 15px 20px;
+    padding: 10px;
+    box-shadow: 0 0 3px 1px black;
 }

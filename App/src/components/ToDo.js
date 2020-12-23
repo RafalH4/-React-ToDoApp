@@ -10,11 +10,12 @@ class ToDoPart extends React.Component {
     }
     render(){
     const items = this.props.items.map(item => (
-        <div key={item.id} className={item.isDone ? "isDone" : "isntDone"}>
+        !item.isDone ?
+        <div key={item.id} className={"isntDone"}>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
             <button onClick={() => this.props.finishMethod(item.id)}>Zakończ</button>
-        </div>
+        </div> : null
     ))
         return(
            <div>
