@@ -3,6 +3,7 @@ import React from "react";
 import ToDoPart from "./components/ToDo";
 import DonePart from "./components/Done";
 import { ToDoItem } from "./models/ToDoItem";
+import NewTask from './components/newTask'
 
 class App extends React.Component {
   state = {
@@ -22,6 +23,7 @@ class App extends React.Component {
   finishTask(id){
     console.log("Zakańczam działanie zadania nr "+id)
     var list = this.state.toDoItems;
+
     var index = list.findIndex(item => item.id == id);
     console.log(index)
     list[index].isDone = true;
@@ -42,11 +44,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="TablePart">
-          <ToDoPart items={this.state.toDoItems} finishMethod={this.finishTask.bind(this)} addMethod={this.addTask.bind(this)} />
-        </div>
-        <div className="TablePart">
-          <DonePart items={this.state.toDoItems} />
+        <NewTask addMethod={this.props.addMethod}/>
+        <div className="columns">
+          <div className="col">
+            <ToDoPart items={this.state.toDoItems} finishMethod={this.finishTask.bind(this)} addMethod={this.addTask.bind(this)} />
+          </div>
+          <div className="col">
+            <DonePart items={this.state.toDoItems} />
+          </div>
         </div>
       </div>
     );

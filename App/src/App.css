@@ -1,9 +1,12 @@
 .App {
   text-align: center;
   display: flex;
+  flex-direction: column;
+}
+.columns{
+  display: flex;
   flex-direction: row;
 }
-.TablePart{
+.col{
   flex: 1;
-  margin: 25px;
 }

@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import "./ToDoStyle.css";
-import NewTask from './newTask'
-
 
 class ToDoPart extends React.Component {
     constructor(props){
@@ -20,7 +18,6 @@ class ToDoPart extends React.Component {
         return(
            <div>
                <h2>Elementy do zrobienia</h2>
-               <NewTask addMethod={this.props.addMethod}/>
                {items}
            </div> 
         )
